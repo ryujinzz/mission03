@@ -16,7 +16,9 @@ const userCardInner = $(".swiper-wrapper");
 
 const renderUserList = async () => {
   try {
-    const response = await tiger.get("/server/data/data.json");
+    const response = await tiger.get(
+      "http://127.0.0.1:8090/api/collections/posts/records"
+    );
     const userData = response.data;
     userData.forEach(
       (data) => renderUserCard(userCardInner, data)

@@ -10,6 +10,7 @@
     "dada": "vite",
     "test": "VITE_CJS_TRACE=true data",
     "build": "vite build",
+    "preview": "vite preview",
     "dev": "live-server client --host=localhost --port=8800 --no-browser",
     "serve": "json-server server/data/data.json",
     "all": "run-p dev serve"

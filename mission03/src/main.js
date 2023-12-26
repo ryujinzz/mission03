@@ -7,7 +7,7 @@ import {
   clearContents,
 } from "/src/lib";
 
-const END_POINT = "http://localhost:3000/test";
+const END_POINT = "http://127.0.0.1:8090/api/collections/posts/records";
 //phase - 1
 
 const userCardInner = $(".swiper-wrapper");
@@ -38,8 +38,8 @@ function handleDelete(e) {
   const article = e.target.closest("article");
   //아티클만 수집
   if (!article || !button) return;
-  const id = article.dataset.index.slice(5);
-  tiger.delete(`${END_POINT}/${id}`).then(() => {
+  const page = article.dataset.index.slice(5);
+  tiger.delete(`${END_POINT}/${page}`).then(() => {
     clearContents(userCardInner);
     renderUserList();
   });
